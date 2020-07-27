@@ -1,0 +1,88 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 5,
+        "name": "Select flight from the list",
+        "description": "",
+        "id": "checking-functionality-of-kayak-website;select-flight-from-the-list",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "launching the browser with url",
+            "match": {
+              "location": "HomepageSteps.launching_the_browser_with_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "Enter origin and destination cities",
+            "match": {
+              "location": "HomepageSteps.enter_origin_and_destination_cities()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Select dates from calender",
+            "match": {
+              "location": "HomepageSteps.select_dates_from_calender()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "click on search button",
+            "match": {
+              "location": "HomepageSteps.click_on_search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "selecting flight from list",
+            "match": {
+              "location": "HomepageSteps.selecting_flight_from_list()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "vaidating origin and destination cities",
+            "match": {
+              "location": "HomepageSteps.vaidating_origin_and_destination_cities()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "checking functionality of kayak website",
+    "description": "",
+    "id": "checking-functionality-of-kayak-website",
+    "keyword": "Feature",
+    "uri": "C:/Users/sweet/eclipse-workspace/Kayakpageobject/src/main/java/com/kayak/features/kayak.feature"
+  }
+]
