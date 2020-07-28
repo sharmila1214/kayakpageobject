@@ -25,11 +25,11 @@ public class Listners implements ITestListener{
 		try {
 			b.screenShot(result.getName());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 		}
-		
 	}
+
 
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub

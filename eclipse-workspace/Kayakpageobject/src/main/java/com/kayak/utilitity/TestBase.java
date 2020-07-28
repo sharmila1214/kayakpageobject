@@ -25,9 +25,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop ;
+	public static Properties props;
 	public static Testutil oU_utility = new Testutil();
-	
-Logger log=Logger.getLogger(getClass().getSimpleName());
+	 Logger log=Logger.getLogger(getClass().getSimpleName());
 	
 	
 	public static WebDriver initialisation() throws IOException {
@@ -39,7 +39,7 @@ Logger log=Logger.getLogger(getClass().getSimpleName());
 		if(browserName.equals("chrome")) {
 			WebDriverManager.chromedriver()	.setup();
 			
-		//System.setProperty("webdriver.chrome.driver", "C:\\jar\\chromedriver.exe");
+		
 		driver= new ChromeDriver();
 		
 		
@@ -49,7 +49,7 @@ Logger log=Logger.getLogger(getClass().getSimpleName());
 		//driver.manage().window().maximize();
 		return driver;
 	}
-	public void loadlog4jproperty() throws Exception 
+	public  void loadlog4jproperty() throws Exception 
 	{
 		String log4path="C:\\Users\\sweet\\eclipse-workspace\\Kayakpageobject\\src\\main\\java\\com\\kayak\\testdata\\log4j.properties";
 		prop=new Properties();
@@ -65,14 +65,14 @@ Logger log=Logger.getLogger(getClass().getSimpleName());
 
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		  TakesScreenshot ts = (TakesScreenshot)TestBase. driver;
-		  File source = ts.getScreenshotAs(OutputType.FILE);
-		  
-		  // after execution, you could see a folder "FailedTestsScreenshots" under src folder
-		  String destination = System.getProperty("user.dir") + "//Screenshots//" +result+ "ts1.png";
+	  File source = ts.getScreenshotAs(OutputType.FILE);
+//		  
+//		  // after execution, you could see a folder "FailedTestsScreenshots" under src folder
+		  String destination = System.getProperty("user.dir") + "//Screenshots//" +result+ ""+dateName+ "ts1.png";
 		  File finalDestination = new File(destination);
 		  FileUtils.copyFile(source, finalDestination);
-		  return destination;
-		 } 
+	  return destination;
+	 } 
 }
 
 	

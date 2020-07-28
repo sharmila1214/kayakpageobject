@@ -19,10 +19,12 @@ import cucumber.api.java.en.When;
 public class HomepageSteps extends TestBase{
 HomePage hm;
 	@Before
-	public void setup() throws IOException {
+	public void setup() throws Exception {
 		System.out.println("inside setup");
 		driver=initialisation();
+	loadlog4jproperty();
 		ExtentReport.extentRep();
+		
 		
 	}
 
@@ -76,8 +78,8 @@ HomePage hm;
 	
 	@Then("^vaidating origin and destination \"([^\"]*)\"$")
 	public void vaidating_origin_and_destination(String arg1) throws Throwable {
-	   Thread.sleep(2000);
-		hm=new HomePage(driver);
+	   //Thread.sleep(2000);
+		//hm=new HomePage(driver);
 		hm.validate(arg1);
 	    ExtentReport.logger.log(LogStatus.PASS, "validation done successfully");
 	}

@@ -19,6 +19,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.kayak.utilitity.TestBase;
 
@@ -76,9 +77,11 @@ public class HomePage extends TestBase{
    WebElement popup;
 
    @FindBy(xpath="//div[@id='searchResultsList'][@class='Base-Results-ResultsList Flights-Results-FlightResultsList']")	
-   List<WebElement> Selectflight;
+   WebElement Selectflight;
 
-   @FindBy(xpath="(//div[@class='Flights-Results-FlightLegDetails']//span[@class='origin-destination'])[1]")	
+@FindBy(xpath="(//div[@class='Flights-Results-FlightLegDetails']//span[@class='origin-destination'])[1]")	
+	
+ //@FindBy(xpath="//section[@id='avmM-details-leg-details']//div[@id='ESJ6']")  
    WebElement Validate;
 
 public void selectoriginanddestination(String origin,String Destin) throws Exception {
@@ -137,17 +140,22 @@ public void clicksearch() throws Exception {
 }
 
 public void selectflight() throws Exception {
-	List<WebElement> flights=Selectflight;
-	for(int count=0;count<flights.size();count++)	{
-		System.out.println(flights.size());
-		flights.get(count).click();
-	oU_utility.ScrollToView(driver, flights.get(0));
-	System.out.println("flight selected");
+	oU_utility.waitforelementvisible(Selectflight);
+	oU_utility.ufClick( Selectflight);
 	log.info("flight selected");
-	//flights.get(count).click();
-	System.out.println("success");
-	Thread.sleep(3000);
-	}	
+	oU_utility.ScrollToView(driver, Selectflight);
+//	List<WebElement> flights=Selectflight;
+//	for(int count=0;count<flights.size();count++)	{
+//		System.out.println(flights.size());
+//		//flights.get(count).click();
+//oU_utility.ScrollToView(driver, flights.get(0));
+//	
+//	System.out.println("flight selected");
+//	log.info("flight selected");
+//	flights.get(count).click();
+//	System.out.println("success");
+//	//Thread.sleep(3000);
+//	}	
 }
 public void validate(String city) throws InterruptedException {
 	//Thread.sleep(2000);
@@ -159,7 +167,7 @@ public void validate(String city) throws InterruptedException {
 	if(actualresult.equals(expectedresult)) {
 		System.out.println("both are same");
 	}
-	//assertEquals(expectedresult,actualresult,"both are same");
+	Assert.assertEquals(expectedresult,actualresult,"both are same");
 
 }
 }
